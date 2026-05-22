@@ -11,10 +11,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 120px;
-    height: 100vh;
-    padding: 50px;
-    margin-top: -80px;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .right{
@@ -98,4 +96,47 @@ button:hover{
     font-size: 50px;
     color: white;
     cursor: pointer;
+}
+@media(max-width: 600px) {
+    .container{
+        flex-direction: column;
+        padding: 10px;
+    }
+    .right{
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+    }
+    h1{
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+    p{
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .buttons{
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    button{
+        width: 80%;
+        padding: 15px;
+        margin-right: 0;
+        font-size: 16px;
+    }
+    #popup img{
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+    #closeBtn{
+        font-size: 40px;
+        top: 15px;
+        right: 20px;
+    }
 }
