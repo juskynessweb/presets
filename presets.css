@@ -1,0 +1,112 @@
+body{
+    margin: 0;
+    padding: 40px;
+    font-family: 'Host Grotesk', sans-serif;
+    color: white;
+    background: url("images/presetbg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.top-bar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.top-bar h1{
+    font-size: 70px;
+    color: white;
+    margin: 0;
+    animation: fadeDown 1s ease;
+}
+#searchInput{
+    padding: 15px 20px;
+    width: 280px;
+    border-radius: 30px;
+    border: none;
+    background: #1b1b1b;
+    color: white;
+    font-size: 16px;
+    backdrop-filter: blur(10px);
+    animation: fadeDown 1.2s ease;
+    transition: 0.3s;
+}
+.preset-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+.preset-card{
+    background: #151515;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    
+    width: 100%;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+
+}
+.preset-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+.preset-card img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+.preset-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.preset-info h3{
+    margin: 0;
+    font-size: 22px;
+}
+.preset-info a{
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    transition: 0.3s;
+}
+.preset-info a:hover{
+    transform: scale(1.2);
+}
+@keyframes fadeUp{
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeDown{
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.close-btn{
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 9999;
+}

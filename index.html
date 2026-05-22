@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Juskyness</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+       
+       
+        <div class="container">
+            
+            
+            <div class="right">
+                <h1>Hi, I'm Jus</h1>
+                <p>
+                    Thank you so much for visiting my self-made website. I really appreciate it. It took me a long time to build this. Choose any option below.
+                </p>
+                <div class="buttons">
+                     <button onclick=" showImage()">AI Editing Tool</button>
+                     <div id="popup">
+                        <span id="closeBtn">&times;</span>
+                        <img src="images/aiweb.jpg">
+                     </div>
+                    
+                    <button onclick="window.location.href='presets.html'">Presets </button>
+                </div>
+            </div>
+        </div>
+        
+        
+        <script>
+            function showImage() {
+                document.getElementById("popup").style.display = "flex";
+            }
+            document.getElementById("closeBtn").onclick = function() {
+                document.getElementById("popup").style.display = "none";
+            }
+        </script>
+        <script type="module">
+
+ 
+ 
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-analytics.js";
+  import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAhCFb8nW5VIo_Kr0r7SQfT-xQKFzmLWLo",
+    authDomain: "juskyness.firebaseapp.com",
+    projectId: "juskyness",
+    storageBucket: "juskyness.firebasestorage.app",
+    messagingSenderId: "589340558669",
+    appId: "1:589340558669:web:07b472dab2655f6040e304",
+    measurementId: "G-HCP98Q17JL"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+
+  async function loadPresets(){
+    const querySnapshot = await getDocs(collection(db, "presets"));
+    querySnapshot.forEach((doc) => {
+        console.log(doc.data());
+    });
+  }
+  loadPresets();
+</script>
+</script>
+    </body>
+</html>
